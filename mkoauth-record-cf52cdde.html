@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mk体育 · 知识库索引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f6f4ee;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            color: #2d2a26;
+            line-height: 1.65;
+            padding: 2rem 1.2rem;
+        }
+        .page {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #fcfaf7;
+            border-radius: 28px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.04);
+            padding: 2.8rem 2.4rem 3.2rem;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .page {
+                padding: 1.8rem 1.2rem 2.4rem;
+                border-radius: 20px;
+            }
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 560;
+            letter-spacing: -0.01em;
+            color: #1f1c18;
+            border-left: 5px solid #c7a86b;
+            padding-left: 1rem;
+            margin-bottom: 0.3rem;
+        }
+        .byline {
+            color: #6c655c;
+            font-size: 0.95rem;
+            margin-bottom: 1.6rem;
+            padding-left: 1.5rem;
+            border-bottom: 1px solid #e5dfd6;
+            padding-bottom: 0.8rem;
+        }
+        .hero-tagline {
+            background: #ede8df;
+            padding: 1.6rem 2rem;
+            border-radius: 18px;
+            margin-bottom: 2.2rem;
+            font-size: 1.1rem;
+            border: 1px solid #dfd7ca;
+            box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.7);
+        }
+        .hero-tagline strong {
+            color: #8b6f4c;
+            font-weight: 600;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 540;
+            margin: 2.4rem 0 0.8rem 0;
+            padding-bottom: 0.35rem;
+            border-bottom: 2px solid #e2d9cb;
+            color: #2c2822;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title span {
+            background: #d7cdbc;
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.2rem 0 0.8rem;
+        }
+        @media (max-width: 550px) {
+            .grid-2col {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.4rem 1.5rem;
+            border: 1px solid #e7dfd3;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+        }
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 530;
+            color: #4c3f32;
+            margin-bottom: 0.5rem;
+        }
+        .card p {
+            font-size: 0.95rem;
+            color: #44403b;
+        }
+        .card a {
+            color: #8b6f4c;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: #c7b28f;
+            font-weight: 480;
+            transition: color 0.15s;
+        }
+        .card a:hover {
+            color: #b38a5a;
+            text-decoration-color: #b38a5a;
+        }
+        .quote-block {
+            background: #f2eee7;
+            border-left: 6px solid #c7a86b;
+            padding: 1.4rem 1.8rem;
+            margin: 1.8rem 0;
+            border-radius: 0 14px 14px 0;
+            font-style: normal;
+            color: #3a3530;
+        }
+        .quote-block p {
+            margin-bottom: 0.4rem;
+        }
+        .quote-block .attribution {
+            font-size: 0.9rem;
+            color: #7f756a;
+            margin-top: 0.6rem;
+            border-top: 1px solid #ddcfbe;
+            padding-top: 0.5rem;
+        }
+        .info-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background: #f6f1ea;
+            border-radius: 20px;
+            padding: 1.3rem 1.8rem;
+            margin: 1.8rem 0 0.6rem;
+            border: 1px solid #dfd1c0;
+        }
+        .info-item {
+            flex: 1 1 160px;
+            margin: 0.3rem 0;
+            font-size: 0.95rem;
+        }
+        .info-item strong {
+            color: #7d694e;
+        }
+        .faq-mini {
+            background: #fcfaf7;
+            border: 1px solid #e7dfd3;
+            border-radius: 18px;
+            padding: 1.2rem 1.8rem 1.6rem;
+            margin-top: 2rem;
+        }
+        .faq-mini details {
+            margin: 0.6rem 0;
+            border-bottom: 1px dashed #dbd1c3;
+            padding-bottom: 0.5rem;
+        }
+        .faq-mini details:last-child {
+            border-bottom: none;
+        }
+        .faq-mini summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #4c3f32;
+            padding: 0.2rem 0;
+            font-size: 0.98rem;
+        }
+        .faq-mini summary::-webkit-details-marker {
+            color: #b39c7b;
+        }
+        .faq-mini p {
+            margin: 0.4rem 0 0.2rem 1rem;
+            color: #4b4540;
+            font-size: 0.92rem;
+        }
+        .notice-box {
+            background: #eae1d4;
+            border-radius: 14px;
+            padding: 1rem 1.6rem;
+            font-size: 0.92rem;
+            margin-top: 2rem;
+            display: flex;
+            gap: 0.8rem;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            color: #3e3730;
+        }
+        .notice-box .label {
+            font-weight: 560;
+            color: #6b5a46;
+            white-space: nowrap;
+        }
+        .footer-note {
+            margin-top: 2.2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #8a8072;
+            border-top: 1px solid #e2d9cb;
+            padding-top: 1.5rem;
+        }
+        .inline-link {
+            color: #8b6f4c;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .inline-link:hover {
+            color: #b38a5a;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e5ddd0;
+            margin: 1.2rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <h1>mk体育 · 快速识别指南</h1>
+    <div class="byline">知识库入口 · 用途索引 · 轻量说明</div>
+
+    <div class="hero-tagline">
+        <strong>mk体育</strong> 是一个围绕体育内容与信息聚合的站点。如果你点进来想知道这里到底做什么、是否对你有用，下面几个模块帮你快速对焦。
+    </div>
+
+    <!-- 目录感布局：核心用途卡片 -->
+    <div class="section-title"><span></span> 定位 · 用途</div>
+    <div class="grid-2col">
+        <div class="card">
+            <h3>🏅 项目 & 动态</h3>
+            <p>覆盖日常赛事、运动项目、训练常识等内容片段。适合想快速浏览体育动态或查询基础信息的用户。</p>
+        </div>
+        <div class="card">
+            <h3>📚 知识片段库</h3>
+            <p>规则解析、术语说明、装备简评、运动营养等轻量知识，像一本随手翻的口袋手册。</p>
+        </div>
+        <div class="card">
+            <h3>🔄 场景化指引</h3>
+            <p>从「新手想了解某运动」到「进阶者查找规则细节」，按使用场景组织内容入口，减少漫无目的的搜索。</p>
+        </div>
+        <div class="card">
+            <h3>🔗 实用链接集</h3>
+            <p>内部关联以及指向 <a href="https://mkoauth.com.cn">mk体育</a> 主站的内容索引，方便跨页面衔接。</p>
+        </div>
+    </div>
+
+    <!-- 引用块 / 说明区：更生活化的语气 -->
+    <div class="quote-block">
+        <p>“之前想查某个运动规则，翻了好几个平台都零零碎碎的。mk体育 把常见知识点收在一起，省得自己东拼西凑。” —— 来自一位普通用户的反馈</p>
+        <div class="attribution">—— 日常使用场景，仅供参考</div>
+    </div>
+
+    <!-- 相关信息区：行内信息卡片 -->
+    <div class="section-title"><span></span> 相关信息 · 背景</div>
+    <div class="info-row">
+        <div class="info-item"><strong>主要方向</strong> 体育常识 · 项目介绍 · 训练提示</div>
+        <div class="info-item"><strong>内容特点</strong> 短条目式 · 低门槛 · 偏应用</div>
+        <div class="info-item"><strong>适合谁</strong> 运动爱好者 · 入门者 · 信息查找者</div>
+    </div>
+
+    <!-- 提示区：带有说明框 -->
+    <div class="notice-box">
+        <span class="label">💡 提示</span>
+        <span>如果你正在找特定运动的规则、术语或者简单训练建议，可以先浏览知识库分类。页面内容保持更新，但具体条目以实际站点为准。</span>
+    </div>
+
+    <!-- FAQ 摘要 + 嵌入链接 -->
+    <div class="faq-mini">
+        <div class="section-title" style="margin-top: 0; border-bottom: none; font-size: 1.15rem;"><span></span> 常见疑问摘要</div>
+        <details open>
+            <summary>mk体育 和一般体育新闻站有什么不同？</summary>
+            <p>侧重知识整理与索引，而非实时新闻流。适合按需查找，而不是刷屏式浏览。</p>
+        </details>
+        <details>
+            <summary>内容主要包含哪些运动？</summary>
+            <p>覆盖多类常见运动，从球类到体能项目，也会整理一些冷门运动的入门资料。具体分类可以在主站 <a href="https://mkoauth.com.cn" class="inline-link">mk体育</a> 中查看。</p>
+        </details>
+        <details>
+            <summary>信息可靠吗？</summary>
+            <p>基于公开体育资料和常识整合，不构成专业训练或医学建议。重要决策请咨询专业人士。</p>
+        </details>
+        <details>
+            <summary>有没有快速到达内容主题的路径？</summary>
+            <p>当前页面本身就是入口索引。你也可以直接通过 <a href="https://mkoauth.com.cn" class="inline-link">mk体育</a> 访问站点首页，选择感兴趣的分类。</p>
+        </details>
+    </div>
+
+    <!-- 再次自然嵌入链接的一句话 -->
+    <div style="margin: 1.5rem 0 0.2rem; font-size: 0.95rem; background: #f9f5ef; padding: 0.8rem 1.2rem; border-radius: 30px;">
+        📌 若想直接回到主站浏览所有内容，可前往 <a href="https://mkoauth.com.cn" class="inline-link">mk体育</a> 首页，从分类入口开始。
+    </div>
+
+    <div class="footer-note">
+        知识库入口风格 · 内容生活化 · 页面排版以清晰为导向
+    </div>
+
+</div>
+</body>
+</html>
